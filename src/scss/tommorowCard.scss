@@ -1,0 +1,15 @@
+.tommorow-card {
+    grid-row: 2 /5;
+    border-radius: $border-radius;
+    padding: 2rem;
+}
+
+.tommorow-card--1 {
+    background-color: greenyellow;
+    grid-column: 7/10;
+}
+
+.tommorow-card--2 {
+    background-color: rgb(237, 77, 37);
+    grid-column: 10/13;
+}

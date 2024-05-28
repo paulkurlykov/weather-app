@@ -1,0 +1,58 @@
+@import "./header.scss";
+@import "./variables.scss";
+@import "./typography.scss";
+@import "./currentCard.scss";
+@import "./tommorowCard.scss";
+@import "./weekForecast.scss";
+@import "./footer.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: "Railway", sans-serif;
+}
+
+body {
+    background-color: $color-bg;
+}
+
+.main {
+    display: grid;
+    // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(13, minmax(5rem, 1fr));
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px;
+    row-gap: 1rem;
+    column-gap: 1rem;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+}
+
+.mb-s {
+    margin-bottom: 2rem;
+}
+
+.mb-m {
+    margin-bottom: 3rem;
+}
+
+.mb-l {
+    margin-bottom: 5rem;
+}
+
+.mb-xl {
+    margin-bottom: 8rem;
+}
