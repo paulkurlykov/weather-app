@@ -1,0 +1,113 @@
+.spring-spinner,
+.spring-spinner * {
+    box-sizing: border-box;
+}
+
+.spring-spinner {
+    height: $spinner-size;
+    width: $spinner-size;
+    // flex: 15%;
+}
+
+.spring-spinner .spring-spinner-part {
+    overflow: hidden;
+    height: calc($spinner-size / 2);
+    width: $spinner-size;
+}
+
+.spring-spinner .spring-spinner-part.bottom {
+    transform: rotate(180deg) scale(-1, 1);
+}
+
+.spring-spinner .spring-spinner-rotator {
+    width: $spinner-size;
+    height: $spinner-size;
+    border: calc($spinner-size / 7) solid transparent;
+    border-right-color: $color-black-1;
+    border-top-color: $color-black-2;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: spring-spinner-animation 1.25s ease-in-out infinite;
+    transform: rotate(-200deg);
+}
+
+@keyframes spring-spinner-animation {
+    0% {
+        border-width: calc($spinner-size / 7);
+    }
+    25% {
+        border-width: calc($spinner-size / 23.33);
+    }
+    50% {
+        transform: rotate(115deg);
+        border-width: calc($spinner-size / 7);
+    }
+    75% {
+        border-width: calc($spinner-size / 23.33);
+    }
+    100% {
+        border-width: calc($spinner-size / 7);
+    }
+}
+
+//// SECTION-SPINNER/////
+
+.loader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.loader:before,
+.loader:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    animation: pulsOut 1.8s ease-in-out infinite;
+    filter: drop-shadow(0 0 1rem rgba(239, 239, 239, 0.75));
+}
+.loader:before {
+    width: 100%;
+    padding-bottom: 100%;
+    box-shadow: inset 0 0 0 1rem $font-color-light;
+    animation-name: pulsIn;
+}
+.loader:after {
+    width: calc(100% - 2rem);
+    padding-bottom: calc(100% - 2rem);
+    box-shadow: 0 0 0 0 $font-color-light;
+}
+
+@keyframes pulsIn {
+    0% {
+        box-shadow: inset 0 0 0 1rem $font-color-light;
+        opacity: 1;
+    }
+    50%,
+    100% {
+        box-shadow: inset 0 0 0 0 $font-color-light;
+        opacity: 0;
+    }
+}
+
+@keyframes pulsOut {
+    0%,
+    50% {
+        box-shadow: 0 0 0 0 #fff;
+        opacity: 0;
+    }
+    100% {
+        box-shadow: 0 0 0 1rem #fff;
+        opacity: 1;
+    }
+}
+
+.makeflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

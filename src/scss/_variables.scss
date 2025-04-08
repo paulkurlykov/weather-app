@@ -1,0 +1,82 @@
+// COLORS
+
+$color-bg: #000000;
+$color-black-1: rgb(36, 36, 36);
+$color-black-2: rgb(58, 58, 58);
+
+$color-grey-dark: rgb(69, 69, 69);
+$color-grey: rgb(107, 107, 107);
+$color-grey-light: rgb(120, 120, 120);
+
+// OTHER
+$border-radius: 12px;
+
+// BOX-SHADOW
+$shadow: 12px 12px 31px 3px rgba(0, 0, 0, 0.81);
+
+// FONT-COLOR:
+
+$font-color-light: rgba(240, 240, 227, 0.872);
+$font-color-light-2: rgba(254, 255, 216, 0.872);
+$font-color-grey: rgba(144, 144, 144, 0.872);
+$font-color-grey-2: rgba(168, 168, 168, 0.771);
+
+// SPINNER
+
+$spinner-size: 3.5rem;
+
+// WIDTH
+
+$search-active-long: 25%;
+
+// MIXINS
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == max-600 {
+        @media (max-width: 37.5em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == max-700 {
+        @media (max-width: 43.75em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == max-800 {
+        @media (max-width: 50em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == max-900 {
+        @media (max-width: 56.25em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == max-1000 {
+        @media (max-width: 62.5em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == max-1100 {
+        @media (max-width: 68.75em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == max-1200 {
+        @media (max-width: 75em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == max-1300 {
+        @media (max-width: 81.25em) {
+            @content;
+        }
+    }
+}

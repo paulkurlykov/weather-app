@@ -1,19 +1,20 @@
 {
-  "name": "weather-app",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "sass": "^1.77.2",
-    "vite": "^5.2.0"
-  },
-  "main": "main.js",
-  "author": "",
-  "license": "ISC",
-  "description": ""
+    "name": "weather-app",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "globals": "^15.8.0",
+        "sass": "^1.77.2",
+        "vite": "^5.2.0"
+    },
+    "main": "main.js",
+    "author": "",
+    "license": "ISC",
+    "description": ""
 }

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <link rel="icon" type="image/svg+xml" href="/partly-cloudy-day-rain" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>weather app</title>
     </head>
@@ -11,172 +11,35 @@
             <div class="header__logo">
                 <span>Weather App</span>
             </div>
-            <form action="#" class="search">
-                <input type="text" class="search__input" placeholder="Search city" />
-                <button class="search__btn">
-                    <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z" />
-                    </svg>
-                </button>
-            </form>
+            <div class="search">
+                <form action="#" class="search__form">
+                    <div class="search__field">
+                        <div class="search__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0">
+                                <use xlink:href="svg/common/sprite.svg#search"></use>
+                            </svg>
+                        </div>
+
+                        <input type="text" class="search__input" placeholder="Введите город" />
+                        <div class="search__spinner spinner"></div>
+                        <div class="search__btn">
+                            <!-- <svg class="search__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0">
+                                <use xlink:href="svg/common/sprite.svg#search"></use>
+                            </svg> -->
+                            <span>найти</span>
+                        </div>
+                    </div>
+                    <div class="suggestions"></div>
+                </form>
+            </div>
         </header>
         <main class="main">
-            <div class="current-card">
-                <div class="flex-row mb-s">
-                    <div class="current-card__now">
-                        <span>Now</span>
-                        <span>Time</span>
-                    </div>
-                </div>
-                <div class="flex-row">
-                    <div class="current-card__location">
-                        <div class="current-card__location-logo">
-                            <svg fill="#000000" viewBox="0 0 24 24" version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M17.657 5.304c-3.124-3.073-8.189-3.073-11.313 0-3.124 3.074-3.124 8.057 0 11.13l5.656 5.565 5.657-5.565c3.124-3.073 3.124-8.056 0-11.13zm-5.657 8.195c-.668 0-1.295-.26-1.768-.732-.975-.975-.975-2.561 0-3.536.472-.472 1.1-.732 1.768-.732s1.296.26 1.768.732c.975.975.975 2.562 0 3.536-.472.472-1.1.732-1.768.732z" />
-                            </svg>
-                        </div>
-                        <span class="current-card__location-name">City</span>
-                    </div>
-                </div>
-
-                <div class="flex-row">
-                    <div class="current-card__temperature">
-                        <span>25</span>
-                    </div>
-                    <div class="current-card__icon">
-                        <img src="./public/svg/amcharts_weather_icons_1.0.0/animated/cloudy-day-1.svg" alt="something" />
-                    </div>
-                    <div class="current-card__state">
-                        <div class="current-card__feels-like">
-                            <div>Sunny</div>
-                            <p>
-                                Feels like
-                                <span>20</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex-row">
-                    <div class="current-card__prop current-card__prop--1">Prop 1</div>
-                    <div class="current-card__prop current-card__prop--2">Prop 2</div>
-                    <div class="current-card__prop current-card__prop--3">Prop 3</div>
-                </div>
-            </div>
-            <div class="tommorow-card tommorow-card--1">
-                <div class="flex-row mb-s">
-                    <div class="current-card__now">
-                        <span>Now</span>
-                        <span>Time</span>
-                    </div>
-                </div>
-                <div class="flex-row">
-                    <div class="current-card__location">
-                        <div class="current-card__location-logo">
-                            <svg fill="#000000" viewBox="0 0 24 24" version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M17.657 5.304c-3.124-3.073-8.189-3.073-11.313 0-3.124 3.074-3.124 8.057 0 11.13l5.656 5.565 5.657-5.565c3.124-3.073 3.124-8.056 0-11.13zm-5.657 8.195c-.668 0-1.295-.26-1.768-.732-.975-.975-.975-2.561 0-3.536.472-.472 1.1-.732 1.768-.732s1.296.26 1.768.732c.975.975.975 2.562 0 3.536-.472.472-1.1.732-1.768.732z" />
-                            </svg>
-                        </div>
-                        <span class="current-card__location-name">City</span>
-                    </div>
-                </div>
-
-                <div class="flex-row">
-                    <div class="current-card__temperature">
-                        <span>25</span>
-                    </div>
-                    <div class="current-card__icon">
-                        <img src="./public/svg/amcharts_weather_icons_1.0.0/animated/cloudy-day-1.svg" alt="something" />
-                    </div>
-                    <div class="current-card__state">
-                        <div class="current-card__feels-like">
-                            <div>Sunny</div>
-                            <p>
-                                Feels like
-                                <span>20</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tommorow-card tommorow-card--2">
-                <div class="flex-row mb-s">
-                    <div class="current-card__now">
-                        <span>Now</span>
-                        <span>Time</span>
-                    </div>
-                </div>
-                <div class="flex-row">
-                    <div class="current-card__location">
-                        <div class="current-card__location-logo">
-                            <svg fill="#000000" viewBox="0 0 24 24" version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M17.657 5.304c-3.124-3.073-8.189-3.073-11.313 0-3.124 3.074-3.124 8.057 0 11.13l5.656 5.565 5.657-5.565c3.124-3.073 3.124-8.056 0-11.13zm-5.657 8.195c-.668 0-1.295-.26-1.768-.732-.975-.975-.975-2.561 0-3.536.472-.472 1.1-.732 1.768-.732s1.296.26 1.768.732c.975.975.975 2.562 0 3.536-.472.472-1.1.732-1.768.732z" />
-                            </svg>
-                        </div>
-                        <span class="current-card__location-name">City</span>
-                    </div>
-                </div>
-
-                <div class="flex-row">
-                    <div class="current-card__temperature">
-                        <span>25</span>
-                    </div>
-                    <div class="current-card__icon">
-                        <img src="./public/svg/amcharts_weather_icons_1.0.0/animated/cloudy-day-1.svg" alt="something" />
-                    </div>
-                    <div class="current-card__state">
-                        <div class="current-card__feels-like">
-                            <div>Sunny</div>
-                            <p>
-                                Feels like
-                                <span>20</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="week-card">
-                <div class="flex-row mb-s">
-                    <div class="current-card__now">
-                        <span>Now</span>
-                        <span>Time</span>
-                    </div>
-                </div>
-                <div class="flex-row">
-                    <div class="current-card__location">
-                        <div class="current-card__location-logo">
-                            <svg fill="#000000" viewBox="0 0 24 24" version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M17.657 5.304c-3.124-3.073-8.189-3.073-11.313 0-3.124 3.074-3.124 8.057 0 11.13l5.656 5.565 5.657-5.565c3.124-3.073 3.124-8.056 0-11.13zm-5.657 8.195c-.668 0-1.295-.26-1.768-.732-.975-.975-.975-2.561 0-3.536.472-.472 1.1-.732 1.768-.732s1.296.26 1.768.732c.975.975.975 2.562 0 3.536-.472.472-1.1.732-1.768.732z" />
-                            </svg>
-                        </div>
-                        <span class="current-card__location-name">City</span>
-                    </div>
-                </div>
-
-                <div class="flex-row">
-                    <div class="current-card__temperature">
-                        <span>25</span>
-                    </div>
-                    <div class="current-card__icon">
-                        <img src="./public/svg/amcharts_weather_icons_1.0.0/animated/cloudy-day-1.svg" alt="something" />
-                    </div>
-                    <div class="current-card__state">
-                        <div class="current-card__feels-like">
-                            <div>Sunny</div>
-                            <p>
-                                Feels like
-                                <span>20</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="current-card"></div>
+            <div class="current-props"></div>
+            <div class="hourly"></div>
+            <div class="daily"></div>
         </main>
-        <footer class="footer">Footer</footer>
+        <footer class="footer"></footer>
         <script type="module" src="/main.js"></script>
     </body>
 </html>

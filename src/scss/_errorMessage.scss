@@ -1,0 +1,48 @@
+.error {
+    grid-column: 1/-1;
+    grid-row: 1 / span 3;
+    z-index: 1000;
+    background-color: $color-black-2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    gap: 3rem;
+    border-radius: 50px;
+
+    &__icon {
+        width: max(10rem, 12%);
+        aspect-ratio: 1/1;
+        fill: $font-color-light;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__btn {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        border-radius: 10rem;
+        margin: 3vw 0 1vw 0;
+        transition: all 0.2s;
+        box-shadow: $shadow;
+        border: none;
+        position: relative;
+        font-family: "Railway", sans-serif;
+        display: inline-block;
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-0.3rem);
+            box-shadow: $shadow;
+        }
+
+        &:active {
+            transform: translateY(-1px);
+            box-shadow: $shadow;
+        }
+    }
+}

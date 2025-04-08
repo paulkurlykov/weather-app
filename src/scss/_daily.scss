@@ -1,0 +1,197 @@
+.daily {
+    min-height: 60rem;
+    grid-column: 1 / -1;
+    background-color: $color-black-2;
+    border-radius: 30px;
+    padding: 1.5rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 1vw;
+    // justify-content: space-between;
+
+    &__card {
+        background-color: $color-black-1;
+        border-radius: $border-radius;
+        padding: 1.5rem 2rem;
+        box-shadow: $shadow;
+
+        display: grid;
+        grid-template-rows: repeat(2, max-content) 1.5rem max-content 1.5rem 1fr;
+        grid-template-columns: repeat(2, minmax(max-content, 1fr));
+        // row-gap: 0.75rem;
+        align-items: center;
+
+        container-type: inline-size;
+        container-name: dailyCard;
+    }
+
+    &__weekday {
+        font-size: 1.3rem;
+        // padding: 0.5rem;
+        grid-column: 1/-1;
+        padding-left: 0.4rem;
+        margin-bottom: 0.4rem;
+    }
+
+    &__date {
+        font-size: 2.1rem;
+        // padding: 0.5rem;
+        grid-column: 1/-1;
+        padding-left: 0.4rem;
+    }
+
+    .temp {
+        display: grid;
+        grid-template-columns: max-content max-content 1fr;
+        grid-template-rows: 1fr 1fr;
+        flex-direction: column;
+        grid-row: 4/5;
+        align-items: center;
+        column-gap: 0.4rem;
+
+        &__icon {
+            width: 2rem;
+            aspect-ratio: 1/1;
+            justify-self: center;
+        }
+
+        &__when {
+            &--max {
+                font-size: 1.6rem;
+            }
+
+            &--min {
+                font-size: 1.2rem;
+            }
+        }
+
+        &__value {
+            font-style: italic;
+            &::after {
+                content: "\00B0";
+                margin-left: -1px;
+            }
+
+            &--max {
+                font-size: 3rem;
+            }
+
+            &--min {
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    &__icon {
+        // width: 15rem;
+        width: 10rem;
+        aspect-ratio: 1/1;
+        grid-column: 2/3;
+        grid-row: 3 / span 3;
+        justify-self: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__state {
+        font-size: 1.4rem;
+        grid-column: 1 / span 2;
+        grid-row: 6/-1;
+        padding-left: 0.4rem;
+    }
+}
+
+@container dailyCard (min-width: 270px) {
+    .daily__icon {
+        // width: 10rem;
+        width: 12rem;
+    }
+}
+
+@container dailyCard (min-width: 310px) {
+    .daily {
+        &__icon {
+            width: 15rem;
+        }
+
+        &__weekday {
+            font-size: 1.5rem;
+        }
+
+        &__date {
+            font-size: 2.3rem;
+        }
+
+        &__state {
+            font-size: 1.6rem;
+        }
+
+        &__temp {
+            .temp {
+                &__icon {
+                    width: 2rem;
+                }
+
+                &__when {
+                    &--max {
+                        font-size: 1.8rem;
+                    }
+
+                    &--min {
+                        font-size: 1.4rem;
+                    }
+                }
+
+                &__value {
+                    &--max {
+                        font-size: 3.3rem;
+                    }
+
+                    &--min {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@container dailyCard (min-width: 400px) {
+    .daily {
+        &__icon {
+            width: 17rem;
+        }
+
+        &__temp {
+            .temp {
+                &__icon {
+                    width: 2.5rem;
+                }
+
+                &__when {
+                    &--max {
+                        font-size: 2rem;
+                    }
+
+                    &--min {
+                        font-size: 1.6rem;
+                    }
+                }
+
+                &__value {
+                    &--max {
+                        font-size: 3.5rem;
+                    }
+
+                    &--min {
+                        font-size: 2.2rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,142 @@
+.prop {
+    background-color: $color-black-1;
+    padding: 1.5rem;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15% 85%;
+    justify-items: center;
+    align-items: center;
+    row-gap: 0.4rem;
+
+    // width: 100%;
+    // height: 100%;
+
+    &--1 {
+        grid-column: 7/-1;
+        grid-row: 1/2;
+    }
+
+    &--2 {
+        grid-column: 7/-1;
+        grid-row: 2/3;
+    }
+
+    &--3 {
+        grid-column: 7/-1;
+        grid-row: 3/4;
+    }
+
+    &__icon {
+        width: 4rem;
+        aspect-ratio: 1/1;
+        fill: $font-color-light;
+        // stroke: $font-color-light;
+        grid-column: 1/2;
+        grid-row: 2/3;
+
+        &--1 {
+            grid-column: 1/2;
+            transform: translateY(5px) scale(0.75);
+            fill: none;
+            stroke: $font-color-light;
+        }
+
+        &--2 {
+            grid-column: 3/4;
+            stroke: $font-color-light;
+            fill: none;
+        }
+
+        &--3 {
+            grid-column: 5/6;
+            transform: translateY(5px) scale(0.75);
+            // fill: $font-color-grey;
+            stroke: $font-color-light;
+            fill: none;
+        }
+
+        &--uv {
+            stroke: $font-color-light;
+            transform: scale(1.2);
+        }
+
+        &--arrow-1 {
+            fill: none;
+            stroke: $font-color-light;
+            width: 3rem;
+            grid-column: 2/3;
+            transform: rotate(-5deg);
+        }
+        &--arrow-2 {
+            fill: none;
+            stroke: $font-color-light;
+            width: 3rem;
+            grid-column: 4/5;
+            transform: rotate(15deg) translateY(-0rem);
+        }
+
+        &--compass {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__name {
+        font-size: 1rem;
+        text-transform: uppercase;
+        grid-column: 1/-1;
+        grid-row: 1/2;
+    }
+
+    &__value-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__value {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        font-size: 3.5rem;
+    }
+
+    &__prefix {
+        font-size: 1.2rem;
+    }
+}
+
+.prop--double {
+    grid-column: 4/7;
+
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+    width: 100%;
+    height: 100%;
+}
+
+.prop--quad {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15% 85%;
+    grid-column: 4/7;
+    justify-items: center;
+    align-items: center;
+}
+
+.current-props__icon {
+    fill: $font-color-light;
+    width: 10rem;
+}
+
+.moonphase {
+    grid-template-columns: 1fr max-content 1fr max-content 1fr;
+    grid-template-rows: max-content 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.wind-2 .prop__value {
+    font-size: 2rem;
+}

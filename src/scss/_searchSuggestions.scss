@@ -1,0 +1,59 @@
+.suggestions {
+    position: absolute;
+    top: 5.5rem;
+    border: none;
+    // transition: all 0.2s;
+    width: 100%;
+    z-index: 9999;
+    min-height: 3rem;
+
+    &__item {
+        background-color: $font-color-light;
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: max-content 1px;
+        align-items: center;
+        row-gap: 1rem;
+        padding: 1rem 1rem 0 1rem;
+        font-size: 1.4rem;
+        color: $color-black-1;
+        transition: background-color 0.2s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $font-color-light-2;
+        }
+    }
+
+    &__item:last-child {
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    &__item:last-child > &__border {
+        width: 0;
+    }
+
+    &__icon {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 2rem;
+
+        svg {
+            width: 100%;
+            aspect-ratio: 1/1;
+        }
+    }
+
+    &__border {
+        height: 1px;
+        background-color: $font-color-grey-2;
+        margin: auto;
+        width: 100%;
+        grid-column: 1/-1;
+    }
+
+    &__text {
+    }
+}

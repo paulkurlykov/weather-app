@@ -1,0 +1,10 @@
+.footer {
+    border-top: 2px solid black;
+    height: 10rem;
+
+    .test-icon__icon {
+        width: 200px;
+        height: 200px;
+        stroke: $font-color-light;
+    }
+}
