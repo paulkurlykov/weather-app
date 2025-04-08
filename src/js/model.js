@@ -5,9 +5,6 @@ const API_URL = import.meta.env.VITE_API_URL;
 const BDC_REVERSE_GEOCODE_API_URL = import.meta.env.VITE_BDC_REVERSE_GEOCODE_API_URL;
 const BDC_API_KEY = import.meta.env.VITE_BDC_API_KEY;
 
-console.log(API_KEY);
-console.log(API_URL);
-
 
 export const state = {
     coords: {},
@@ -83,6 +80,10 @@ export function getCoordsFromSearchQuery(index) {
 
 export const loadWeatherData = async (lat, lon) => {
     try {
+
+        if(!lat || !lon) {
+            throw new Error('Координаты не былои получены')
+        }
         const res = await fetch(`${API_URL}${lat}%2C%20${lon}?unitGroup=metric&include=days%2Chours%2Ccurrent&key=${API_KEY}&contentType=json&lang=ru`);
         if (!res.ok) {
             state.fetchWeather = true;
@@ -98,7 +99,6 @@ export const loadWeatherData = async (lat, lon) => {
 
 export async function loadCityName(lat, lon) {
     try {
-        console.log('erer');
         const res = await Promise.race([fetch(`${BDC_REVERSE_GEOCODE_API_URL}?latitude=${lat}&longitude=${lon}&localityLanguage=ru&key=${BDC_API_KEY}`), timeout(3)]);
         if (!res.ok) throw new Error(`response is not OK, status: ${res.status}`);
         const data = await res.json();
